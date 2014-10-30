@@ -56,8 +56,8 @@
    (bind-key "C-x ?" 'show-dot-emacs-structure)))
 
 ;;;; Emacs tweak
-;; Basic Emacs config
-
+;; Customize File
+(setq custom-file "~/custom.el")
 ;; Start server
 (server-start)
 ;; Prevent the cursor from blinking
@@ -118,15 +118,18 @@
 (add-hook 'dired-after-readin-hook 'my-dired-long-lines)
 
 ;; no extra buffers when entering different dirs
-(use-package dired-single :ensure t)
-(add-hook 'dired-mode-hook
-          (lambda ()
-            (define-key dired-mode-map (kbd "RET") 'joc-dired-single-buffer)
-            (define-key dired-mode-map (kbd "<mouse-1>") 'joc-dired-single-buffer-mouse)
-            (define-key dired-mode-map (kbd "^")
-              (lambda ()
-                (interactive)
-                (joc-dired-single-buffer "..")))))
+(use-package dired-single
+  :ensure t
+  :config
+  (add-hook 'dired-mode-hook
+            (lambda ()
+              (define-key dired-mode-map (kbd "RET") 'dired-single-buffer)
+              (define-key dired-mode-map (kbd "<mouse-1>") 'dired-single-buffer-mouse)
+              (define-key dired-mode-map (kbd "^")
+                (lambda ()
+                  (interactive)
+                  (dired-single-buffer "..")))))
+)
 
 ;;;; Favourite Directories
 ;; TODO: submit to MELPA
@@ -308,36 +311,3 @@
 
 ;;;; Machine Specific
 (load "~/.emacs.d/custom.el" 'noerror)
-
-;;;; Customized Variables
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ange-ftp-ftp-program-name "~/ftp.exe")
- '(c-basic-offset 4)
- '(compile-command "mingw32-make -k ")
- '(default-frame-alist (quote ((tool-bar-lines . 1) (width . 125) (height . 45) (menu-bar-lines . 1))))
- '(diff-command "tkdiff")
- '(diff-switches "")
- '(ediff-custom-diff-options "-cb")
- '(g-curl-common-options "-k --http1.0 --compressed --silent --location --location-trusted")
- '(ibuffer-saved-filter-groups nil)
- '(ibuffer-saved-filters (quote (("emacs-config" ((filename . "/.emacs.d/"))) ("i_family_health" ((filename . "projects/i_family_health/"))) ("B.42" ((filename . "/281000B00042/"))) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
- '(indent-tabs-mode nil)
- '(org-agenda-files (quote ("~/org/todo/misc.org" "~/org/todo/work.org")))
- '(org-agenda-include-diary nil)
- '(org-mobile-directory "~/org/mobile-publish")
- '(password-cache-expiry 86400)
- '(tab-width 4)
- '(tramp-remote-path (quote (tramp-own-remote-path tramp-default-remote-path "/usr/sbin" "/usr/local/bin" "/local/bin" "/local/freeware/bin" "/local/gnu/bin" "/usr/freeware/bin" "/usr/pkg/bin" "/usr/contrib/bin")))
- '(transient-mark-mode t)
- '(user-full-name "Bood")
- '(user-mail-address "boodweb@gmail.com"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
