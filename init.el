@@ -131,43 +131,14 @@
                   (dired-single-buffer "..")))))
 )
 
-;;;; Favourite Directories
-;; TODO: submit to MELPA
-(use-package drkm-fav)
-(setq drkm-userhost "qianhaib@tucsdwb32.tucson.ibm.com")
-(setq drkm-hurgsa "qianhaib@hurgsa.ibm.com")
-(setq drkm-tucgsa "qianhaib@tucgsa.ibm.com")
-(setq drkm-xenium "qianhaib@xenium.ssd.hursley.ibm.com")
-(setq drkm-cobalt "pscp:qianhaib@cobalt.ssd.hursley.ibm.com")
-(setq drkm-a5build "pscp:qianhaib@a5build.shanghai.cn.ibm.com")
-(setq drkm-teststand "pscp:root@panda1.shanghai.cn.ibm.com")
-(setq drkm-qundong-root "/pscp:root@218.244.137.221:")
-(setq drkm-root (concat "/" (concat drkm-userhost ":")))
-(setq drkm-hurgsa-root (concat "/" (concat drkm-hurgsa ":")))
-(setq drkm-tucgsa-root (concat "/" (concat drkm-tucgsa ":")))
-(setq drkm-xenium-root (concat "/" (concat drkm-xenium ":")))
-(setq drkm-cobalt-root (concat "/" (concat drkm-cobalt ":")))
-(setq drkm-a5build-root (concat "/" (concat drkm-a5build ":")))
-(setq drkm-teststand-root (concat "/" (concat drkm-teststand ":")))
-(setq drkm-fav:favourite-directories-alist
-  (list (cons "home"  (concat drkm-root "~"))
-        (cons "tucgsa"  (concat drkm-tucgsa-root "/gsa/tucgsa/home/q/i/qianhaib"))
-        (cons "hurgsa"  (concat drkm-hurgsa-root "/gsa/hurgsa/home/q/i/qianhaib"))
-        (cons "root"  drkm-root)
-        (cons "mmbuild" (concat drkm-root "/gsa/tucgsa/projects/m/mmbuild"))
-        (cons "_0c" (concat drkm-root "/mc/R0.CPSS/cur/cmvc"))
-        (cons "_0" (concat drkm-root "~/dev2000/mc/R0.CPSS/usr/cmvc"))
-        (cons "usrstg" (concat drkm-root "~/dev2000/mc"))
-        (cons "qundong" (concat drkm-qundong-root "/var/www/i_family_health"))
-        (cons "a4sb" (concat drkm-xenium-root "/work/qianhaib/sb"))
-        (cons "a5sb" (concat drkm-a5build-root "/work/qianhaib/sb"))
-        (cons "teststand" (concat drkm-teststand-root "/wideopen/qianhaib"))
-        (cons "a5sb-hursley" (concat drkm-cobalt-root "/work/qianhaib/sb"))
-        (cons "wideopen" (concat drkm-a5build-root "/wideopen/qianhaib"))
-        (cons "wideopen-hursley" (concat drkm-xenium-root "/wideopen/qianhaib"))
-        (cons "linuxhome" "/qianhaib@9.125.91.76:~")))
-
 ;;;; Editing
+
+;;;;; Ace jump
+(use-package ace-jump-mode
+  :ensure t
+  :commands ace-jump-mode
+  :init
+  (bind-key "C-c SPC" 'ace-jump-mode))
 
 ;;;;; Word wrap
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
@@ -208,6 +179,20 @@
   (interactive "r\nsAlign regexp: ")
   (align-regexp start end
                 (concat "\\(\\s-*\\)" regexp) 1 1 t))
+
+;;;;; Rainbow for color visualization
+(use-package rainbow-mode
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (add-hook 'css-mode-hook 'rainbow-mode)
+    (add-hook 'scss-mode-hook 'rainbow-mode)))
+
+;;;;; Web-mode
+(use-package web-mode
+  :ensure t
+  :mode "\\.tpl\\|\\.erb\\|\\.html?\\|\\.jinja2\\'")
 
 ;;;;; Enhanced javascript mode
 (use-package js2-mode
