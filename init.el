@@ -194,6 +194,13 @@
   :ensure t
   :mode "\\.tpl\\|\\.erb\\|\\.html?\\|\\.jinja2\\'")
 
+;;;;; Emmet auto-complete html tags
+(use-package emmet-mode
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'web-mode-hook 'emmet-mode))
+
 ;;;;; Enhanced javascript mode
 (use-package js2-mode
   :ensure t
