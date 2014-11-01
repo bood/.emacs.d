@@ -3,6 +3,7 @@
 (prefer-coding-system 'utf-8)
 
 ;;;; Paths
+(add-to-list 'exec-path (concat (getenv "PYTHON_HOME") "/"))
 (add-to-list 'exec-path (concat (getenv "CYGWIN_HOME") "/bin"))
 (add-to-list 'exec-path "d:/MinGW/bin")
 (add-to-list 'exec-path "d:/Tools/putty")
@@ -241,6 +242,13 @@
   :init
   (progn
     (add-hook 'after-init-hook 'global-company-mode)))
+
+;; Python backend
+(use-package company-anaconda
+  :ensure t
+  :init
+  (progn
+    (add-to-list 'company-backends 'company-anaconda)))
 
 ;;;; Folding
 (autoload 'folding-mode          "folding" "Folding mode" t)
