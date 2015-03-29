@@ -1,6 +1,6 @@
 ;;;; Coding system: utf-8 as default
-(setq buffer-file-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
+(setq buffer-file-coding-system 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
 
 ;;;; Paths
 (add-to-list 'exec-path (concat (getenv "PYTHON_HOME") "/"))
@@ -246,9 +246,17 @@
 ;; Python backend
 (use-package company-anaconda
   :ensure t
+  :disabled t
   :init
   (progn
     (add-to-list 'company-backends 'company-anaconda)))
+
+(use-package ac-js2
+  :ensure t
+  :disabled
+  :init
+  (add-hook 'js2-mode-hook 'ac-js2-mode)
+  )
 
 ;;;; Folding
 (autoload 'folding-mode          "folding" "Folding mode" t)
