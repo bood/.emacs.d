@@ -2,13 +2,6 @@
 (setq buffer-file-coding-system 'utf-8-unix)
 (prefer-coding-system 'utf-8-unix)
 
-;;;; Paths
-(add-to-list 'exec-path (concat (getenv "PYTHON_HOME") "/"))
-(add-to-list 'exec-path (concat (getenv "CYGWIN_HOME") "/bin"))
-(add-to-list 'exec-path "d:/MinGW/bin")
-(add-to-list 'exec-path "d:/Tools/putty")
-(add-to-list 'exec-path "d:/Tools/clang/bin")
-
 ;;;; ELPA settings
 (require 'package)
 (add-to-list 'package-archives
@@ -58,7 +51,7 @@
 
 ;;;; Emacs tweak
 ;; Customize File
-(setq custom-file "~/custom.el")
+(setq custom-file "~/.emacs.d/custom.el")
 ;; Start server
 (server-start)
 ;; Prevent the cursor from blinking
