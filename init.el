@@ -35,6 +35,11 @@
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family (font-utils-first-existing-font zh-fonts)))))
 
+(set-background-color "black")
+(set-foreground-color "wheat")
+(add-to-list 'default-frame-alist '(height . 45))
+(add-to-list 'default-frame-alist '(width . 125))
+
 ;;;; Show TOC
 ;; https://github.com/avar/dotemacs/blob/master/.emacs
 
@@ -60,7 +65,7 @@
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
 ;; Don't let Emacs hurt your ears
-(setq visible-bell t)
+;;(setq visible-bell t)
 ;; Who use the bar to scroll?
 (scroll-bar-mode 0)
 ;(tool-bar-mode 0)
@@ -309,6 +314,10 @@
   )
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;;;; Remote shortcuts
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'drkm-fav)
 
 ;;;; Machine Specific
 (load "~/.emacs.d/custom.el" 'noerror)
