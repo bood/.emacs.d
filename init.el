@@ -35,11 +35,6 @@
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family (font-utils-first-existing-font zh-fonts)))))
 
-(set-background-color "black")
-(set-foreground-color "wheat")
-(add-to-list 'default-frame-alist '(height . 45))
-(add-to-list 'default-frame-alist '(width . 125))
-
 ;;;; Show TOC
 ;; https://github.com/avar/dotemacs/blob/master/.emacs
 
