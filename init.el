@@ -308,6 +308,11 @@
     )
   )
 
+(use-package magit
+  :ensure t
+  :bind ("C-x g" . magit-status)
+  )
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;; Remote shortcuts

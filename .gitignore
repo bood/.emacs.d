@@ -6,3 +6,5 @@
 /ac-comphist.dat
 /projectile.cache
 *.el~
+bookmarks
+.session

@@ -8,7 +8,7 @@
  '(default-frame-alist
     (quote
      ((vertical-scroll-bars)
-      (height . 45)
+      (height . 35)
       (width . 100)
       (foreground-color . "wheat")
       (background-color . "black"))))
