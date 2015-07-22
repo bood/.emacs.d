@@ -313,6 +313,20 @@
   :bind ("C-x g" . magit-status)
   )
 
+(use-package helm
+  :ensure t
+  :config
+  (helm-mode 1))
+
+(use-package helm-projectile
+  :ensure t
+  :config
+  (progn
+    (projectile-global-mode)
+    (setq projectile-completion-system 'helm)
+    (helm-projectile-on))
+  )
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;; Remote shortcuts
