@@ -240,16 +240,18 @@
 (use-package company-anaconda
   :ensure t
   :disabled t
-  :init
+  :config
   (progn
     (add-to-list 'company-backends 'company-anaconda)))
 
 (use-package ac-js2
   :ensure t
   :disabled
-  :init
+  :config
   (add-hook 'js2-mode-hook 'ac-js2-mode)
   )
+
+(add-to-list 'company-backends 'company-gtags)
 
 ;;;; Folding
 (autoload 'folding-mode          "folding" "Folding mode" t)
@@ -332,6 +334,20 @@
   :config
   (add-hook 'prog-mode-hook
           (lambda () (yafolding-mode))))
+
+(use-package helm-gtags
+  :ensure t
+  :config
+  (progn
+    (define-key helm-gtags-mode-map (kbd "C-c s t") 'helm-gtags-find-tag)
+    (define-key helm-gtags-mode-map (kbd "C-c s r") 'helm-gtags-find-rtag)
+    (define-key helm-gtags-mode-map (kbd "C-c s p") 'helm-gtags-find-pattern)
+    (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+    (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+    (define-key helm-gtags-mode-map (kbd "C-c s u") 'helm-gtags-pop-stack)
+    (add-hook 'prog-mode-hook
+          (lambda () (helm-gtags-mode)))
+    ))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
