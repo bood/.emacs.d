@@ -327,6 +327,12 @@
     (helm-projectile-on))
   )
 
+(use-package yafolding
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook
+          (lambda () (yafolding-mode))))
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;; Remote shortcuts
