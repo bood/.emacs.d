@@ -349,6 +349,10 @@
           (lambda () (helm-gtags-mode)))
     ))
 
+(use-package rust-mode
+  :ensure t
+  )
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;; Remote shortcuts
