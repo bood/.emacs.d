@@ -64,7 +64,7 @@
 ;; Who use the bar to scroll?
 (scroll-bar-mode 0)
 ;(tool-bar-mode 0)
-(menu-bar-mode 0)
+(menu-bar-mode 1)
 ;; Show keystroke
 (setq echo-keystrokes 0.1)
 ;; Answer briefly
@@ -359,5 +359,25 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'drkm-fav)
 
+;; Check if system is Darwin/Mac OS X
+(defun system-type-is-darwin ()
+(interactive)
+"Return true if system is darwin-based (Mac OS X)"
+(string-equal system-type "darwin")
+)
+
+;; Check if system is GNU/Linux
+(defun system-type-is-gnu ()
+(interactive)
+"Return true if system is GNU/Linux-based"
+(string-equal system-type "gnu/linux")
+)
+
 ;;;; Machine Specific
-(load "~/.emacs.d/custom.el" 'noerror)
+(if (string-equal system-type "windows-nt")
+    (load "~/.emacs.d/custom.win.el" 'noerror)
+  )
+
+(if (string-equal system-type "darwin")
+    (load "~/.emacs.d/custom.mac.el" 'noerror)
+  )
