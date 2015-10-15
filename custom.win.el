@@ -14,7 +14,7 @@
       (background-color . "black"))))
  '(org-src-fontify-natively t)
  '(session-use-package t nil (session))
- '(user-mail-address "bood@glowing.com"))
+ '(user-mail-address "boodweb@gmail.com"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
