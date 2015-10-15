@@ -295,6 +295,22 @@
                     (filename . "/i_family_health/"))
                    ("i_family_health Backend"
                     (filename . "/i_family_health_backend/"))
+                   ;; Glowing Inc. starts
+                   ("emma"
+                    (filename . "/projects/emma/"))
+                   ("kaylee"
+                    (filename . "/projects/kaylee/"))
+                   ("bryo"
+                    (filename . "/projects/bryo/"))
+                   ("suso"
+                    (filename . "/projects/suso/"))
+                   ("lexie"
+                    (filename . "/projects/lexie/"))
+                   ("noah"
+                    (filename . "/projects/noah/"))
+                   ("prime"
+                    (filename . "/projects/prime/"))
+                   ;; Glowing Inc. ends
                    ("Programming" ;; prog stuff not already in MyProjectX
                     (or
                      (mode . c-mode)
