@@ -24,16 +24,36 @@
 
 ;;;; UI
 ;; Fonts
-(when (display-graphic-p)
-  (use-package font-utils :ensure t)
-  (setq fonts '("Consolas" "Source Code Pro" "Menlo" "Monaco" "DejaVu Sans Mono")
-        zh-fonts '("Noto Sans S Chinese" "Hiragino Sans GB" "STHeiti" "Microsoft Yahei" "WenQuanYi Zen Hei"))
+(defun set-font (english chinese size-pair)
+  (when (display-graphic-p)
+    (use-package font-utils :ensure t)
+    (set-face-attribute 'default nil :font
+                        (format "%s:pixelsize=%d" english (car size-pair)))
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font) charset
+                        (font-spec :family chinese :size (cdr size-pair))))))
 
-  (set-face-attribute 'default nil :font
-                      (format "%s:pixelsize=%d" (font-utils-first-existing-font fonts) 15))
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font) charset
-                      (font-spec :family (font-utils-first-existing-font zh-fonts)))))
+(defun emacs-step-font-size (step)
+  "Increase/Decrease emacs's font size. Need to define emacs-english-font emacs-chinese-font before use"
+  (let ((scale-steps emacs-font-size-pair-list))
+    (if (< step 0) (setq scale-steps (reverse scale-steps)))
+    (setq emacs-font-size-pair
+          (or (cadr (member emacs-font-size-pair scale-steps))
+              emacs-font-size-pair))
+    (when emacs-font-size-pair
+      (message "emacs font size set to %.1f" (car emacs-font-size-pair))
+      (set-font emacs-english-font emacs-chinese-font emacs-font-size-pair))))
+
+(defun increase-emacs-font-size ()
+  "Decrease emacs's font-size acording emacs-font-size-pair-list."
+  (interactive) (emacs-step-font-size 1))
+
+(defun decrease-emacs-font-size ()
+  "Increase emacs's font-size acording emacs-font-size-pair-list."
+  (interactive) (emacs-step-font-size -1))
+
+(global-set-key (kbd "C-=") 'increase-emacs-font-size)
+(global-set-key (kbd "C--") 'decrease-emacs-font-size)
 
 ;;;; Show TOC
 ;; https://github.com/avar/dotemacs/blob/master/.emacs
@@ -375,20 +395,6 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'drkm-fav)
 
-;; Check if system is Darwin/Mac OS X
-(defun system-type-is-darwin ()
-(interactive)
-"Return true if system is darwin-based (Mac OS X)"
-(string-equal system-type "darwin")
-)
-
-;; Check if system is GNU/Linux
-(defun system-type-is-gnu ()
-(interactive)
-"Return true if system is GNU/Linux-based"
-(string-equal system-type "gnu/linux")
-)
-
 ;;;; Machine Specific
 (if (string-equal system-type "windows-nt")
     (load "~/.emacs.d/custom.win.el" 'noerror)
@@ -397,3 +403,6 @@
 (if (string-equal system-type "darwin")
     (load "~/.emacs.d/custom.mac.el" 'noerror)
   )
+
+;;;; Set matching fonts (defined in custom.*.el)
+(set-font emacs-english-font emacs-chinese-font emacs-font-size-pair)
