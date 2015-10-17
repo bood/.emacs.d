@@ -1,5 +1,17 @@
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 2)))
+
+;; Matching fontset
+(defvar emacs-english-font "Consolas")
+(defvar emacs-chinese-font "Microsoft Yahei")
+(defvar emacs-font-size-pair '(16 . 18)
+  "Default font size pair for (english . chinese)")
+
+(defvar emacs-font-size-pair-list
+  '((11 . 12) (12 . 14)
+    (14 . 16) (16 . 18) (18 . 20))
+  "This list is used to store matching (englis . chinese) font-size.")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
