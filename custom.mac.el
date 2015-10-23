@@ -24,8 +24,8 @@
  '(default-frame-alist
     (quote
      ((vertical-scroll-bars)
-      (height . 35)
-      (width . 100)
+      (height . 40)
+      (width . 120)
       (foreground-color . "wheat")
       (background-color . "black"))))
  '(org-src-fontify-natively t)
