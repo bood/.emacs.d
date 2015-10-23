@@ -330,6 +330,10 @@
                     (filename . "/projects/noah/"))
                    ("prime"
                     (filename . "/projects/prime/"))
+                   ("forum"
+                    (filename . "/projects/glow_forum/"))
+                   ("ansible"
+                    (filename . "/projects/glow_ansible/"))
                    ;; Glowing Inc. ends
                    ("Programming" ;; prog stuff not already in MyProjectX
                     (or
