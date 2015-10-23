@@ -389,6 +389,10 @@
   :ensure t
   )
 
+(use-package yaml-mode
+  :ensure t
+  )
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;; Remote shortcuts
