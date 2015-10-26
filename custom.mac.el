@@ -27,7 +27,7 @@
       (height . 40)
       (width . 120)
       (foreground-color . "wheat")
-      (background-color . "black"))))
+      (background-color . "gray10"))))
  '(org-src-fontify-natively t)
  '(session-use-package t nil (session))
  '(user-mail-address "bood@glowing.com"))
