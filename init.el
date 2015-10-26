@@ -259,7 +259,7 @@
 ;; Python backend
 (use-package company-anaconda
   :ensure t
-  :disabled t
+;  :disabled t
   :config
   (progn
     (add-to-list 'company-backends 'company-anaconda)))
@@ -271,7 +271,7 @@
   (add-hook 'js2-mode-hook 'ac-js2-mode)
   )
 
-(add-to-list 'company-backends 'company-gtags)
+;(add-to-list 'company-backends 'company-gtags)
 
 ;;;; Folding
 (autoload 'folding-mode          "folding" "Folding mode" t)
@@ -396,6 +396,9 @@
 (use-package yaml-mode
   :ensure t
   )
+
+(use-package markdown-mode
+  :ensure t)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
