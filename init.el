@@ -262,7 +262,8 @@
 ;  :disabled t
   :config
   (progn
-    (add-to-list 'company-backends 'company-anaconda)))
+    (add-to-list 'company-backends 'company-anaconda)
+    (add-hook 'python-mode-hook 'anaconda-mode)))
 
 (use-package ac-js2
   :ensure t
@@ -315,6 +316,10 @@
                     (filename . "/i_family_health/"))
                    ("i_family_health Backend"
                     (filename . "/i_family_health_backend/"))
+                   ("Sophie Server"
+                    (filename . "/Sophie/server"))
+                   ("Sophie Ansible"
+                    (filename . "/Sophie/ansible"))
                    ;; Glowing Inc. starts
                    ("emma"
                     (filename . "/projects/emma/"))
