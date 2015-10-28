@@ -2,6 +2,13 @@
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 2)))
 
+(setenv "PYTHONPATH"
+        (concat
+         "/Users/Bood/pythonpath:"
+         (getenv "PYTHONPATH")))
+
+(setq python-shell-virtualenv-path "/Users/Bood/virtualenv/devbox")
+
 ;; Matching fontset
 (defvar emacs-english-font "Menlo")
 (defvar emacs-chinese-font "Hiragino Sans GB")
