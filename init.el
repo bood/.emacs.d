@@ -70,8 +70,6 @@
    (bind-key "C-x ?" 'show-dot-emacs-structure)))
 
 ;;;; Emacs tweak
-;; Customize File
-(setq custom-file "~/.emacs.d/custom.el")
 ;; Start server
 (server-start)
 ;; Prevent the cursor from blinking
@@ -413,12 +411,15 @@
 
 ;;;; Machine Specific
 (if (string-equal system-type "windows-nt")
-    (load "~/.emacs.d/custom.win.el" 'noerror)
+    (setq custom-file "~/.emacs.d/custom.win.el")
   )
 
 (if (string-equal system-type "darwin")
-    (load "~/.emacs.d/custom.mac.el" 'noerror)
+    (setq custom-file "~/.emacs.d/custom.mac.el")
   )
+
+;; Customize File
+(load custom-file 'noerror)
 
 ;;;; Set matching fonts (defined in custom.*.el)
 (set-font emacs-english-font emacs-chinese-font emacs-font-size-pair)

@@ -1,4 +1,5 @@
-(setq exec-path (append exec-path '("/usr/local/bin")))
+(add-to-list 'exec-path '"/usr/local/bin")
+
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 2)))
 
@@ -36,6 +37,7 @@
       (foreground-color . "wheat")
       (background-color . "gray10"))))
  '(org-src-fontify-natively t)
+ '(python-check-command "/usr/local/bin/pyflakes")
  '(session-use-package t nil (session))
  '(user-mail-address "bood@glowing.com"))
 (custom-set-faces
