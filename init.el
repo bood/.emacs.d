@@ -318,6 +318,8 @@
                     (filename . "/Sophie/server"))
                    ("Sophie Ansible"
                     (filename . "/Sophie/ansible"))
+                   ("Sophie Container"
+                    (filename . "/Sophie/containers"))
                    ;; Glowing Inc. starts
                    ("emma"
                     (filename . "/projects/emma/"))
