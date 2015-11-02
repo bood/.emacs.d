@@ -314,12 +314,13 @@
                     (filename . "/i_family_health/"))
                    ("i_family_health Backend"
                     (filename . "/i_family_health_backend/"))
+                   ;; Rice Inc
                    ("Sophie Server"
-                    (filename . "/Sophie/server"))
-                   ("Sophie Ansible"
-                    (filename . "/Sophie/ansible"))
-                   ("Sophie Container"
-                    (filename . "/Sophie/containers"))
+                    (filename . "/sophie/server"))
+                   ("Sophie Web"
+                    (filename . "/sophie/web"))
+                   ("Sophie Docker"
+                    (filename . "/docker/"))
                    ;; Glowing Inc. starts
                    ("emma"
                     (filename . "/projects/emma/"))
