@@ -406,6 +406,12 @@
 (use-package markdown-mode
   :ensure t)
 
+(use-package csharp-mode
+  :ensure t)
+
+(use-package lua-mode
+  :ensure t)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;; Remote shortcuts
