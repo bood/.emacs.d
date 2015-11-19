@@ -314,6 +314,8 @@
                     (filename . "/i_family_health/"))
                    ("i_family_health Backend"
                     (filename . "/i_family_health_backend/"))
+                   ("HearthStone Bot"
+                    (filename . "/HearthstoneBot/"))
                    ;; Rice Inc
                    ("Sophie Server"
                     (filename . "/sophie/server"))
@@ -410,6 +412,9 @@
   :ensure t)
 
 (use-package lua-mode
+  :ensure t)
+
+(use-package gist
   :ensure t)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
