@@ -417,6 +417,14 @@
 (use-package gist
   :ensure t)
 
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode))
+
+(use-package flycheck-pyflakes
+  :ensure t)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;; Remote shortcuts
