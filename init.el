@@ -440,8 +440,12 @@
     (setq custom-file "~/.emacs.d/custom.mac.el")
   )
 
+(if (string-equal system-type "gnu/linux")
+    (setq custom-file "~/.emacs.d/custom.linux.el")   )
+
 ;; Customize File
-(load custom-file 'noerror)
+(if custom-file
+    (load custom-file 'noerror))
 
 ;;;; Set matching fonts (defined in custom.*.el)
 (set-font emacs-english-font emacs-chinese-font emacs-font-size-pair)
