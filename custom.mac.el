@@ -46,8 +46,11 @@
       (width . 120)
       (foreground-color . "wheat")
       (background-color . "gray10"))))
+ '(flycheck-flake8-maximum-line-length 200)
  '(org-src-fontify-natively t)
- '(python-check-command "/usr/local/bin/pyflakes")
+ '(package-selected-packages
+   (quote
+    (magit-popup yasnippet yaml-mode yafolding xcscope web-mode use-package session relative-line-numbers rainbow-mode python-docstring pyenv-mode markdown-mode magit lua-mode json-rpc js2-mode highlight-indentation helm-projectile helm-gtags gist font-utils flycheck-pyflakes emmet-mode dired-single csharp-mode company-anaconda ace-jump-mode)))
  '(session-use-package t nil (session))
  '(user-mail-address "bood@glowing.com"))
 (custom-set-faces
