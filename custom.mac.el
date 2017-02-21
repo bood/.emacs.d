@@ -1,5 +1,15 @@
 (add-to-list 'exec-path '"/usr/local/bin")
 
+(setenv "PATH"
+        (concat
+         "/usr/local/bin:"
+         (getenv "PATH")))
+
+(setenv "PATH"
+        (concat
+         "/Users/Bood/.cargo/bin:"
+         (getenv "PATH")))
+
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 2)))
 
