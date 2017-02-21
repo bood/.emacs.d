@@ -302,18 +302,10 @@
           (quote (("default"
                    ("Org" ;; all org-related buffers
                     (mode . org-mode))
-                   ("150.4F - Arrowhead 4.3"
-                    (filename . "/20101500004F/"))
-                   ("F.07 - 7.4"
-                    (filename . "/281000F00007"))
-                   ("B.42 - 4K"
-                    (filename . "/281000B00042/"))
-                   ("EM-210"
-                    (filename . "/lodestone210/"))
-                   ("i_family_health"
-                    (filename . "/i_family_health/"))
-                   ("i_family_health Backend"
-                    (filename . "/i_family_health_backend/"))
+                   ("rust-clippy"
+                    (filename . "/rust-clippy/"))
+                   ("remacs"
+                    (filename . "/remacs/"))
                    ("HearthStone Bot"
                     (filename . "/HearthstoneBot/"))
                    ;; Rice Inc
