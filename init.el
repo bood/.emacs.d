@@ -396,6 +396,11 @@
 
 (use-package rust-mode
   :ensure t
+  :config
+  (add-hook 'rust-mode-hook
+            (lambda ()
+              (set (make-local-variable 'compile-command)
+                   "cargo run")))
   )
 
 (use-package yaml-mode
