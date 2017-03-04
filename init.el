@@ -204,7 +204,7 @@
 ;;;;; Web-mode
 (use-package web-mode
   :ensure t
-  :mode "\\.tpl\\|\\.erb\\|\\.html?\\|\\.jinja2\\'")
+  :mode "\\.js\\|\\.tpl\\|\\.erb\\|\\.html?\\|\\.jinja2\\'")
 
 ;;;;; Emmet auto-complete html tags
 (use-package emmet-mode
@@ -216,6 +216,7 @@
 ;;;;; Enhanced javascript mode
 (use-package js2-mode
   :ensure t
+  :disabled t
   :mode "\\.js\\'"
   :config
   (setq js2-basic-offset 2))
@@ -419,15 +420,30 @@
 (use-package gist
   :ensure t)
 
+(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+
 (use-package flycheck
   :ensure t
   :init
-  (global-flycheck-mode))
+  (global-flycheck-mode)
+  :config
+  (progn
+    (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+    (flycheck-add-mode 'javascript-eslint 'web-mode)))
 
 (use-package flycheck-pyflakes
   :ensure t)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x C-c") 'compile)
 
 ;;;; Remote shortcuts
 (add-to-list 'load-path "~/.emacs.d/lisp")
