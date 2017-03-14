@@ -444,6 +444,11 @@
 (use-package flycheck-pyflakes
   :ensure t)
 
+(use-package emojify
+  :ensure t
+  :init
+  (global-emojify-mode))
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-c") 'compile)
 
