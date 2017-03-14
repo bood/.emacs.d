@@ -204,7 +204,9 @@
 ;;;;; Web-mode
 (use-package web-mode
   :ensure t
-  :mode "\\.js\\|\\.tpl\\|\\.erb\\|\\.html?\\|\\.jinja2\\'")
+  :mode "\\.js\\|\\.tpl\\|\\.erb\\|\\.html?\\|\\.jinja2\\'"
+  :config
+  (setq web-mode-content-types-alist '(("jsx"  . "\\.js[x]?\\'"))))
 
 ;;;;; Emmet auto-complete html tags
 (use-package emmet-mode
