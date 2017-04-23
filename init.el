@@ -337,6 +337,10 @@
                     (filename . "/projects/glow_forum/"))
                    ("ansible"
                     (filename . "/projects/glow_ansible/"))
+                   ("BaseAndroid"
+                    (filename . "/projects/Base-Android/"))
+                   ("CommunityAndroid"
+                    (filename . "/projects/Community-Android/"))
                    ;; Glowing Inc. ends
                    ("Programming" ;; prog stuff not already in MyProjectX
                     (or
@@ -422,6 +426,9 @@
 (use-package gist
   :ensure t)
 
+(use-package flycheck-flow
+  :ensure t)
+
 (defun my/use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
                 (or (buffer-file-name) default-directory)
@@ -439,15 +446,21 @@
   :config
   (progn
     (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
-    (flycheck-add-mode 'javascript-eslint 'web-mode)))
+    (flycheck-add-mode 'javascript-flow 'web-mode)
+    (flycheck-add-mode 'javascript-eslint 'web-mode)
+    (flycheck-add-next-checker 'javascript-flow 'javascript-eslint)))
 
 (use-package flycheck-pyflakes
-  :ensure t)
+  :ensure t
+  :disabled t)
 
 (use-package emojify
   :ensure t
   :init
   (global-emojify-mode))
+
+(use-package pyvenv
+  :ensure t)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-c") 'compile)

@@ -18,7 +18,7 @@
          "/Users/Bood/pythonpath:"
          (getenv "PYTHONPATH")))
 
-(setq python-shell-virtualenv-path "/Users/Bood/virtualenv/devbox")
+(pyvenv-activate "/Users/Bood/virtualenv/devbox")
 
 ;; Matching fontset
 (defvar emacs-english-font "Menlo")
@@ -50,7 +50,8 @@
  '(org-src-fontify-natively t)
  '(package-selected-packages
    (quote
-    (magit-popup yasnippet yaml-mode yafolding xcscope web-mode use-package session relative-line-numbers rainbow-mode python-docstring pyenv-mode markdown-mode magit lua-mode json-rpc js2-mode highlight-indentation helm-projectile helm-gtags gist font-utils flycheck-pyflakes emmet-mode dired-single csharp-mode company-anaconda ace-jump-mode)))
+    (flycheck-flow pyvenv emojify counsel magit-popup yasnippet yaml-mode yafolding xcscope web-mode use-package session relative-line-numbers rainbow-mode python-docstring pyenv-mode markdown-mode magit lua-mode json-rpc js2-mode highlight-indentation helm-projectile helm-gtags gist font-utils flycheck-pyflakes emmet-mode dired-single csharp-mode company-anaconda ace-jump-mode)))
+ '(safe-local-variable-values (quote ((web-mode-enable-auto-indentation))))
  '(session-use-package t nil (session))
  '(user-mail-address "bood@glowing.com"))
 (custom-set-faces
