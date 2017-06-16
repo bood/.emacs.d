@@ -423,6 +423,9 @@
 (use-package lua-mode
   :ensure t)
 
+(use-package groovy-mode
+  :ensure t)
+
 (use-package gist
   :ensure t)
 

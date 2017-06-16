@@ -53,7 +53,7 @@
  '(org-src-fontify-natively t)
  '(package-selected-packages
    (quote
-    (flycheck-flow pyvenv emojify counsel magit-popup yasnippet yaml-mode yafolding xcscope web-mode use-package session relative-line-numbers rainbow-mode python-docstring pyenv-mode markdown-mode magit lua-mode json-rpc js2-mode highlight-indentation helm-projectile helm-gtags gist font-utils flycheck-pyflakes emmet-mode dired-single csharp-mode company-anaconda ace-jump-mode)))
+    (groovy-mode flycheck-flow pyvenv emojify counsel magit-popup yasnippet yaml-mode yafolding xcscope web-mode use-package session relative-line-numbers rainbow-mode python-docstring pyenv-mode markdown-mode magit lua-mode json-rpc js2-mode highlight-indentation helm-projectile helm-gtags gist font-utils flycheck-pyflakes emmet-mode dired-single csharp-mode company-anaconda ace-jump-mode)))
  '(safe-local-variable-values (quote ((web-mode-enable-auto-indentation))))
  '(session-use-package t nil (session))
  '(user-mail-address "bood@glowing.com"))
