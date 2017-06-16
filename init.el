@@ -99,7 +99,7 @@
       `((".*" ,temporary-file-directory t)))
 
 ;;;; Tramp
-(setq tramp-default-method "ftp")
+(setq tramp-default-method "scp")
 
 ;;;; Session
 (use-package session
