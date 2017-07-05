@@ -206,7 +206,11 @@
   :ensure t
   :mode "\\.js\\|\\.tpl\\|\\.erb\\|\\.html?\\|\\.jinja2\\'"
   :config
-  (setq web-mode-content-types-alist '(("jsx"  . "\\.js[x]?\\'"))))
+  (progn
+    (setq web-mode-content-types-alist '(("jsx"  . "\\.js[x]?\\'")))
+    (add-hook 'web-mode-hook 'hs-minor-mode)
+    )
+)
 
 ;;;;; Emmet auto-complete html tags
 (use-package emmet-mode
@@ -471,6 +475,17 @@
 ;;;; Remote shortcuts
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'drkm-fav)
+
+;;;; HideShow keybinding
+(setq hs-minor-mode-map
+      (let ((map (make-sparse-keymap)))
+        (define-key map (kbd "C-c <left>")   'hs-hide-block)
+        (define-key map (kbd "C-c <right>")   'hs-show-block)
+        (define-key map (kbd "C-c <up>")	  'hs-hide-all)
+        (define-key map (kbd "C-c <down>")	  'hs-show-all)
+        (define-key map (kbd "C-c M-<left>")   'hs-hide-level)
+        (define-key map [(shift mouse-2)] 'hs-mouse-toggle-hiding)
+        map))
 
 ;;;; Machine Specific
 (if (string-equal system-type "windows-nt")
