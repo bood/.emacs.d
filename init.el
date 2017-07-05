@@ -469,6 +469,17 @@
 (use-package pyvenv
   :ensure t)
 
+(use-package all-the-icons
+  :ensure t)
+
+(use-package all-the-icons-dired
+  :ensure t
+  :config
+  (add-hook 'dired-mode-hook
+            (lambda ()
+              (all-the-icons-dired-mode 1)
+              )))
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-c") 'compile)
 
