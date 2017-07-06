@@ -469,8 +469,32 @@
 (use-package pyvenv
   :ensure t)
 
+(defun set-icon-fonts (CODE-FONT-ALIST)
+    "Utility to associate many unicode points with specified fonts."
+    (--each CODE-FONT-ALIST
+      (-let (((font . codes) it))
+        (--each codes
+          (set-fontset-font t `(,it . ,it) font)))))
+
 (use-package all-the-icons
-  :ensure t)
+  :ensure t
+  :config
+  (set-icon-fonts
+   '(("fontawesome"
+      ;;                               :android:
+      #xf07c #xf0c9 #xf0c4 #xf0cb #xf017 #xf101 #xf17b)
+
+     ("all-the-icons"
+      ;;    
+      #xe907 #xe928)
+
+     ("github-octicons"
+      ;;                          
+      #xf091 #xf059 #xf076 #xf075 #xe192  #xf016)
+
+     ("material icons"
+      ;;        
+      #xe871 #xe918 #xe3e7 #xe859))))
 
 (use-package all-the-icons-dired
   :ensure t
@@ -497,6 +521,49 @@
         (define-key map (kbd "C-c M-<left>")   'hs-hide-level)
         (define-key map [(shift mouse-2)] 'hs-mouse-toggle-hiding)
         map))
+
+;;;; Pretty magit
+;; http://www.modernemacs.com/post/pretty-magit/
+(defmacro pretty-magit (WORD ICON PROPS &optional NO-PROMPT?)
+  "Replace sanitized WORD with ICON, PROPS and by default add to prompts."
+  `(prog1
+     ;; Matches `WORD:`
+     (add-to-list 'pretty-magit-alist
+                  (list (rx bow (group ,WORD (eval (if ,NO-PROMPT? "" ":"))))
+                        ,ICON ',PROPS))
+     ;; Matches `<WORD>`
+     (add-to-list 'pretty-magit-alist
+                  (list (rx (group "<" ,WORD ">"))
+                        ,ICON ',PROPS))
+     (unless ,NO-PROMPT?
+       (add-to-list 'pretty-magit-prompt (concat ,WORD ": ")))))
+
+(setq pretty-magit-alist nil)
+(setq pretty-magit-prompt nil)
+(pretty-magit "Add" "plus" (:foreground "#375E97" :height 1.2))
+(pretty-magit "Fix" "check" (:foreground "#FB6542" :height 1.2))
+(pretty-magit "Android" "android" (:foreground "#86D74E" :height 1.2))
+(pretty-magit "IOS" "apple" (:foreground "#FFFFFF" :height 1.2))
+(pretty-magit "server" "desktop" (:foreground "#FFFFFF" :height 1.2))
+
+
+(defun add-magit-faces ()
+  "Add face properties and compose symbols for buffer from pretty-magit."
+  (interactive)
+  (with-silent-modifications
+    (--each pretty-magit-alist
+      (-let (((rgx icon props) it))
+        (save-excursion
+          (goto-char (point-min))
+          (while (search-forward-regexp rgx nil t)
+            (compose-region
+              (match-beginning 1) (match-end 1) (all-the-icons-faicon icon))
+            (when props
+              (add-face-text-property
+               (match-beginning 1) (match-end 1) props))))))))
+
+(advice-add 'magit-status :after 'add-magit-faces)
+(advice-add 'magit-refresh-buffer :after 'add-magit-faces)
 
 ;;;; Machine Specific
 (if (string-equal system-type "windows-nt")
