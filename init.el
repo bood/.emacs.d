@@ -270,6 +270,24 @@
     (add-to-list 'company-backends 'company-anaconda)
     (add-hook 'python-mode-hook 'anaconda-mode)))
 
+(defun my/use-flow-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (flow (and root
+                    (expand-file-name "node_modules/flow-bin/vendor/flow"
+                                      root))))
+    (when (and flow (file-executable-p flow))
+      (setq-local company-flow-executable flow))))
+
+;; Flow backend
+(use-package company-flow
+  :ensure t
+  :config
+  (progn
+    (add-hook 'company-mode-hook #'my/use-flow-from-node-modules)
+    (add-to-list 'company-backends 'company-flow)))
+
 (use-package ac-js2
   :ensure t
   :disabled
