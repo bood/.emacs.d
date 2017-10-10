@@ -208,6 +208,7 @@
   :config
   (progn
     (setq web-mode-content-types-alist '(("jsx"  . "\\.js[x]?\\'")))
+    (setq web-mode-enable-auto-quoting nil)
     (add-hook 'web-mode-hook 'hs-minor-mode)
     )
 )
