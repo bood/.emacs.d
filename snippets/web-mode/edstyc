@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Export default Styled Component
+# key: edstyc
+# --
+export default styled.$1`

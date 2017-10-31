@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Creates a named function in ES6 syntax
+# key: nfn
+# --
+const ${1:name} = (${2:params}) => {
+    ${3}
+}

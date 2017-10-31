@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Export default function in ES6 syntax
+# key: edf
+# --
+export default (${1:params}) =>  {
+    $0
+};
+

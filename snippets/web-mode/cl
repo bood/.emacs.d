@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Log output to console
+# key: cl
+# --
+console.log($1)

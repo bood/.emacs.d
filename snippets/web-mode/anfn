@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Creates an anonymous function in ES6 syntax
+# key: anfn
+# --
+(${1:params}) => {
+    ${2}
+}

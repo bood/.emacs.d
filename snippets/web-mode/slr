@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Stateless Component Return
+# key: slr
+# --
+const $1 = () => {

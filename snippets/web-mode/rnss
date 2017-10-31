@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: StyleSheet Style
+# key: rnss
+# --
+const styles = StyleSheet.create({

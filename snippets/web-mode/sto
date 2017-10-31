@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Executes the given function after the specified delay in ES6 syntax
+# key: sto
+# --
+setTimeout(() => {
+    ${2}
+}, ${1:delayInms});

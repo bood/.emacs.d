@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: EStyleSheet Style
+# key: ess
+# --
+import EStyleSheet from 'react-native-extended-stylesheet';

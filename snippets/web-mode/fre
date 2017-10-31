@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Creates a forEach statement in ES6 syntax
+# key: fre
+# --
+${1:array}.forEach(${2:currentItem} => {
+    ${0}
+});

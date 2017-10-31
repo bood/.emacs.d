@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Creates a method inside a class in ES6 syntax
+# key: met
+# --
+${1:methodName}(${2:params}) {
+    ${0}
+}

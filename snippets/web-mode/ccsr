@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Component Class With Redux
+# key: ccsr
+# --
+class $1 extends Component {

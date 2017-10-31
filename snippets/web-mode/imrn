@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Import React-Native Element
+# key: imrn
+# --
+import { $1 } from 'react-native';

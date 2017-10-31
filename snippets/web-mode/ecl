@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Export default class in ES6 syntax
+# key: ecl
+# --
+export default class ${1:className} {
+    $0
+};
+

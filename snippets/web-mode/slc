@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Stateless Component Function
+# key: slc
+# --
+function $1($2) {

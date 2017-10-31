@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Connect Redux
+# key: crr
+# --
+import { connect } from 'react-redux';

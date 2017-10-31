@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Styled Component
+# key: styc
+# --
+const $1 = styled.$2`

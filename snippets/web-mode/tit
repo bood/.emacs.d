@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Test it
+# key: tit
+# --
+it('should $1', $2($3) => {

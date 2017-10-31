@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Displays tabular data as a table.
+# key: clt
+# --
+console.table(${1:object});

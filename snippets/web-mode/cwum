@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ComponentWillUnmount
+# key: cwum
+# --
+componentWillUnmount() {

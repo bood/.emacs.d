@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ComponentDidUpdate
+# key: cdu
+# --
+componentDidUpdate(prevProps, prevState) {

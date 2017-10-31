@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ComponentWillReceiveProps
+# key: cwrp
+# --
+componentWillReceiveProps(nextProps) {

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Imports entire module in ES6 syntax without module name
+# key: imn
+# --
+import '${1:module}';$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Export Styled Component
+# key: estyc
+# --
+export const $1 = styled.$2`

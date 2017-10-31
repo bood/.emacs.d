@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Redux constant
+# key: rct
+# --
+export const $1 = '$1';

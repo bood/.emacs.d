@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Creates a setter property inside a class in ES6 syntax
+# key: pse
+# --
+set ${1:propertyName}(${2:value}) {
+    ${0};
+}

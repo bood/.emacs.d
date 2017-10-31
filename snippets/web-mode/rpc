@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Redux Pure Function Const
+# key: rpc
+# --
+export const $1 = '$1';

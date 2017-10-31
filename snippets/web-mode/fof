@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Iterating over property names of iterable objects
+# key: fof
+# --
+for (const ${1:item} of ${2:object}) {
+    ${0}
+}

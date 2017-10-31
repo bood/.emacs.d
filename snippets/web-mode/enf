@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Export named function in ES6 syntax
+# key: enf
+# --
+export const ${1:functionName} = (${2:params}) =>  {
+    $0
+};
+

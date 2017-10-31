@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Import Styled-Components
+# key: ims
+# --
+import styled from 'styled-components';

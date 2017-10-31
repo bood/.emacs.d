@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: If the specified expression is false, the message is written to the console along with a stack trace
+# key: cas
+# --
+console.assert(${1:expression}, ${2:object});
