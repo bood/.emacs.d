@@ -260,7 +260,8 @@
   :ensure t
   :init
   (progn
-    (add-hook 'after-init-hook 'global-company-mode)))
+    (add-hook 'after-init-hook 'global-company-mode)
+    (define-key company-active-map (kbd "<tab>") nil)))
 
 ;; Python backend
 (use-package company-anaconda
