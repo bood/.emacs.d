@@ -244,7 +244,17 @@
 (use-package yasnippet
   :ensure t
   :init
-  (yas-global-mode))
+  (yas-global-mode)
+  :config
+  (defcustom commit-prefix-alist
+    '(("fix" "Fix: ") ("ad" "Android: "))
+    "Prefix yasnippets when writing commit message."
+    :type '(alist :value-type (group string))
+    :group 'yasnippet
+    :set (lambda (symbol value)
+           (set-default symbol value)
+           (yas-define-snippets 'text-mode value))
+    ))
 
 ;;;;; Auto-complete
 (use-package auto-complete-config
