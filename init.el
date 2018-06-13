@@ -535,7 +535,6 @@
               )))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-x C-c") 'compile)
 
 ;;;; Remote shortcuts
 (add-to-list 'load-path "~/.emacs.d/lisp")
