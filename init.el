@@ -352,6 +352,8 @@
                     (filename . "/sophie/web"))
                    ("Sophie Docker"
                     (filename . "/docker/"))
+                   ("Leela Zero"
+                    (filename . "/mypro/leela-zero/"))
                    ;; Glowing Inc. starts
                    ("emma"
                     (filename . "/projects/emma/"))
@@ -375,6 +377,10 @@
                     (filename . "/projects/Base-Android/"))
                    ("CommunityAndroid"
                     (filename . "/projects/Community-Android/"))
+                   ("mia-server"
+                    (filename . "/projects/mia/server/"))
+                   ("mia-web"
+                    (filename . "/projects/mia/web/"))
                    ;; Glowing Inc. ends
                    ("Programming" ;; prog stuff not already in MyProjectX
                     (or
