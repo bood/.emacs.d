@@ -561,6 +561,13 @@
 (defun add-d-to-ediff-mode-map () (define-key ediff-mode-map "d" 'ediff-copy-both-to-C))
 (add-hook 'ediff-keymap-setup-hook 'add-d-to-ediff-mode-map)
 
+;;;; Re-read dir-locals of current buffer
+(defun my-reload-dir-locals-for-current-buffer ()
+  "reload dir locals for the current buffer"
+  (interactive)
+  (let ((enable-local-variables :all))
+    (hack-dir-local-variables-non-file-buffer)))
+
 ;;;; Machine Specific
 (if (string-equal system-type "windows-nt")
     (setq custom-file "~/.emacs.d/custom.win.el")
