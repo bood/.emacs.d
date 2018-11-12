@@ -39,6 +39,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(commit-prefix-alist
+   (quote
+    (("fix" "Fix: ")
+     ("adr" "Android: ")
+     ("ios" "iOS: ")
+     ("pa" "Patient App: ")
+     ("ca" "Coach App: "))))
  '(company-dabbrev-downcase nil)
  '(company-idle-delay 0)
  '(company-minimum-prefix-length 2)
