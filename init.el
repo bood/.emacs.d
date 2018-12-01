@@ -159,10 +159,6 @@
 (show-paren-mode)
 (electric-pair-mode)
 
-;;;;; Show relative line numbers
-(use-package relative-line-numbers
-  :ensure t)
-
 ;;;;; Indention
 (bind-keys ("RET" . newline-and-indent)
            ("C-j" . newline))
@@ -269,6 +265,7 @@
 (use-package company
   :ensure t
   :init
+  :config
   (progn
     (add-hook 'after-init-hook 'global-company-mode)
     (define-key company-active-map (kbd "<tab>") nil)))
@@ -573,6 +570,9 @@
   (interactive)
   (let ((enable-local-variables :all))
     (hack-dir-local-variables-non-file-buffer)))
+
+(tool-bar-mode -1)
+(setq column-number-mode t)
 
 ;;;; Machine Specific
 (if (string-equal system-type "windows-nt")
