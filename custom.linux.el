@@ -4,7 +4,7 @@
 ;; Matching fontset
 (defvar emacs-english-font "Monaco")
 (defvar emacs-chinese-font "Microsoft Yahei")
-(defvar emacs-font-size-pair '(14 . 16)
+(defvar emacs-font-size-pair '(16 . 18)
   "Default font size pair for (english . chinese)")
 
 (defvar emacs-font-size-pair-list
