@@ -5,7 +5,7 @@
 ;;;; ELPA settings
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 (defun require-package (package &optional min-version no-refresh)
