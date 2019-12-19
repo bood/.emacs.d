@@ -415,7 +415,8 @@
   (progn
     (projectile-global-mode)
     (setq projectile-completion-system 'helm)
-    (helm-projectile-on))
+    (helm-projectile-on)
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
   )
 
 (use-package yafolding
