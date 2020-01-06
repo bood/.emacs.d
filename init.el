@@ -416,6 +416,7 @@
     (projectile-global-mode)
     (setq projectile-completion-system 'helm)
     (helm-projectile-on)
+    (customize-set-variable 'helm-ff-lynx-style-map t)
     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
   )
 
