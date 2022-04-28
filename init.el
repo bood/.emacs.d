@@ -400,7 +400,12 @@
                    "git.supremind.info/api/v4"
                    "git.supremind.info"
                    forge-gitlab-repository)
-                 ))
+                 )
+    (transient-append-suffix 'forge-dispatch '(0)
+      ["Edit"
+       ("e a" "assignees" forge-edit-topic-assignees)
+       ("e r" "review requests" forge-edit-topic-review-requests)])
+    )
   )
 
 (use-package helm
