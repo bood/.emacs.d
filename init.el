@@ -399,6 +399,18 @@
   :bind ("C-x g" . magit-status)
   )
 
+(use-package forge
+  :after magit
+  :config
+  (progn
+    (add-to-list 'forge-alist
+                 '("git.supremind.info"
+                   "git.supremind.info/api/v4"
+                   "git.supremind.info"
+                   forge-gitlab-repository)
+                 ))
+  )
+
 (use-package helm
   :ensure t
   :config
