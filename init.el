@@ -539,6 +539,12 @@
               (all-the-icons-dired-mode 1)
               )))
 
+(use-package so-long
+  :ensure t
+  :init
+  (global-so-long-mode)
+  )
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;; Remote shortcuts
